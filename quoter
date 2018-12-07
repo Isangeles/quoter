@@ -1,0 +1,54 @@
+#!/bin/bash
+conf_file_path="$HOME/.quoter"
+home_dir="$HOME/quoter"
+conf_v_script="$home_dir/confv.awk"
+random_q_script="$home_dir/randomq.sh"
+print_q_script="$home_dir/printq.awk"
+q_base_path=$(awk '{print $0}' $conf_file_path | awk -f $conf_v_script)
+quote_id=0
+# Arguments check.
+while [ "$1" != "" ];
+do
+	case $1 in
+	-q | --quote)    shift
+					if [ "$quote_id" != "" ]
+					then
+						quote_id="$1"
+					else
+						quote_id=0
+					fi
+					break;;
+	-sb | --set-base) shift
+				        q_base_path=$1
+				        echo "base:$q_base_path" >$conf_file_path
+				        exit;;
+	-pb | --print-base) 	 
+		                        base=$(awk '{print $0}' $q_base_path)
+					echo -e "$base"
+					exit;;
+	-l | --list) 	 
+		                        quotes=$(awk -f $print_q_script $q_base_path)
+					echo -e "$quotes"
+					exit;;
+	esac
+done
+# Checks whether quotes collection is set.
+if [ "$q_base_path" = "" ]
+then
+    echo "quoter:No quotes collection set"
+    exit 1
+fi
+# Checks whether specific quote was selected.
+if [ "$quote_id" = "0" ]
+then
+    # Print random quote.
+    quote=$("$random_q_script" $q_base_path)
+else
+    # Print selected quote.
+    quote=$(sed -n ''"$quote_id"'p' $_base_path)
+fi
+echo "$quote" | awk -f $print_q_script
+exit 0
+	    
+
+	    

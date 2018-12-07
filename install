@@ -1,0 +1,27 @@
+#!/bin/sh
+# Script to install quoter.
+#
+# Checks whether user ~/bin directory exists and
+# creates it if not exits.
+if [ ! -d ~/bin ]
+then
+	mkdir --mode=755 ~/bin
+fi
+# Copies scripts, config file and creates directory in ~/.
+cp -p quoter ~/bin
+mkdir --mode=755 ~/quoter
+chmod +x confv.awk
+chmod +x randomq.sh
+chmod +x printq.awk
+cp -p confv.awk ~/quoter
+cp -p randomq.sh ~/quoter
+cp -p printq.awk ~/quoter
+echo "base:" >~/.quoter
+# Checks whether user ~/bin is in user PATH,
+# if not script exports ~/bin to PATH variable.
+if [[ $PATH != ?(*:)$HOME/bin?(:*) ]]
+then
+	echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
+	source ~/.bashrc
+fi
+exit 0

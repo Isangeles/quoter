@@ -1,0 +1,8 @@
+#!/bin/sh
+# Script to remove quoter from system.
+rm ~/bin/quoter
+rm ~/quoter/confv.awk
+rm ~/quoter/randomq.sh
+rm ~/quoter/printq.awk
+rm ~/.quoter
+rmdir ~/quoter
