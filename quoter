@@ -4,7 +4,8 @@ home_dir="$HOME/quoter"
 conf_v_script="$home_dir/confv.awk"
 random_q_script="$home_dir/randomq.sh"
 print_q_script="$home_dir/printq.awk"
-q_base_path=$(awk '{print $0}' $conf_file_path | awk -f $conf_v_script)
+q_base_name=$(awk '{print $0}' $conf_file_path | awk -f $conf_v_script)
+q_base_path="$home_dir/$q_base_name"
 quote_id=0
 # Arguments check.
 while [ "$1" != "" ];
@@ -33,7 +34,7 @@ do
 	esac
 done
 # Checks whether quotes collection is set.
-if [ "$q_base_path" = "" ]
+if [ "$q_base_name" = "" ]
 then
     echo "quoter:No quotes collection set"
     exit 1

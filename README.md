@@ -11,20 +11,23 @@ Run:
 ```
 ./install
 ```
-If command does not work after installation try to relog.
+If quoter command does not work after installation try to relog.
 ## Usage
 Before using quoter you must specifiy quotes base location.
 You do this by editing '.quoter' config file or by command:
 ```
-quoter --set-base [path to file]
-``` 
+quoter --set-base [file name]
+```
+Where file name is name of a text file in ./quoter directory.
 To run quoter simply type:
 ```
 quoter
 ```
 Script options:
---set-base/-sb &nbsp;&nbsp;&nbsp;-to set quotes base.
---list/-l &nbsp;&nbsp;&nbsp;-to list all quotes from current quotes base.
+
+--set-base/-sb [file name]&nbsp;&nbsp;&nbsp;- to set file in ./quoter directory with specified name as current quotes base.
+
+--list/-l &nbsp;&nbsp;&nbsp;- to list all quotes from current quotes base.
 
 ## Uninstallation
 Run:
