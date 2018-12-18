@@ -2,7 +2,6 @@
 # collection line in format:
 # [author]|[source]|[addtional comment]|[quote].
 BEGIN{ FS="|"; ORS="" }  
-    #{ /#(.*)/ { next } } # ommit comment lines, TODO: don' work
     { 
 	split($4, lines, "\\\\n");
 	for( id in lines ) { 
