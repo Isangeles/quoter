@@ -1,20 +1,23 @@
 ## Introduction
 Quoter is simple bash program that displays random quote from selected quotes collection.
+
 Quotes collection file need to be text file written in following format:
 ```
 [author]|[source]|[addtional comment]|[quote]
 ```
 You can download quotes collections from there:
 [isangeles.pl/quoter](http://isangeles.pl/quoter)
+
 ## Instalation
 Run:
 ```
 ./install
 ```
-If quoter command does not work after installation try to relog.
+If `quoter` command does not work after installation try to relog.
+
 ## Usage
-Before using quoter you must specifiy quotes base location.
-You do this by editing '.quoter' config file or by command:
+Before using `quoter` you must specifiy quotes base location.
+You do this by editing `.quoter` config file or by command:
 ```
 quoter --set-base [file name]
 ```
@@ -23,11 +26,15 @@ To run quoter simply type:
 ```
 quoter
 ```
-Script options:
-
---set-base/-sb [file name]&nbsp;&nbsp;&nbsp;- to set file in ./quoter directory with specified name as current quotes base.
-
---list/-l &nbsp;&nbsp;&nbsp;- to list all quotes from current quotes base.
+### Script options:
+```
+quoter --set-base/-sb [file name]
+```
+Sets file in `./quoter` directory as current quotes base.
+```
+quoter --list/-l
+```
+List all quotes from current quotes base.
 
 ## Uninstallation
 Run:
@@ -35,7 +42,7 @@ Run:
 ./uninstall
 ```
 ## License
-Copyright (c) 2018 Dariusz Sikora <<dev@isangeles.pl>>
+Copyright (c) 2018-2019 Dariusz Sikora <<dev@isangeles.pl>>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
