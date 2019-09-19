@@ -36,7 +36,7 @@ quoter --list/-l
 ```
 List all quotes from current quotes base.
 
-## Uninstallation
+## Remove
 Run:
 ```
 ./uninstall
