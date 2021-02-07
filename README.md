@@ -1,5 +1,5 @@
 ## Introduction
-Quoter is simple bash program that displays random quote from selected quotes collection.
+Quoter is simple program for GNU Linux Bash that displays random quote from selected quotes collection.
 
 Quotes collection file need to be text file written in following format:
 ```
@@ -42,7 +42,7 @@ Run:
 ./uninstall
 ```
 ## License
-Copyright (c) 2018-2019 Dariusz Sikora <<dev@isangeles.pl>>
+Copyright (c) 2018-2021 Dariusz Sikora <<dev@isangeles.pl>>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
