@@ -5,11 +5,11 @@
 # creates it if not exits.
 if [ ! -d ~/bin ]
 then
-	mkdir --mode=755 ~/bin
+	mkdir ~/bin
 fi
 # Copies scripts, config file and creates directory in ~/.
 cp -p quoter ~/bin
-mkdir --mode=755 ~/quoter
+mkdir ~/quoter
 chmod +x confv.awk
 chmod +x randomq.sh
 chmod +x printq.awk
